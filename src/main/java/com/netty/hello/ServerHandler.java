@@ -29,6 +29,6 @@ public class ServerHandler extends SimpleChannelInboundHandler<HttpObject> {
 
     @Override
     protected void messageReceived(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
-
+        System.out.println("=messageReceived=>"+msg);
     }
 }
