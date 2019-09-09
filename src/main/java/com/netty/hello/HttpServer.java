@@ -24,7 +24,9 @@ public class HttpServer {
             // childhandler 是我们自己写的请求处理器
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .childHandler(new ServerInitializer());
+
+                    //每个channle需要处理的事件；
+                    .childHandler(new com.netty.hello.ServerInitializer());
 
             //绑定端口
             ChannelFuture future = serverBootstrap.bind(8011).sync();
